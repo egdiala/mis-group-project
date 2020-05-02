@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Verification</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+        <link href="../css/bootstrap.css" rel="stylesheet">
+        <link href="../css/styles.css" rel="stylesheet">
+        <link href="../css/animate.css" rel="stylesheet">
+        <script src="../jquery/jquery.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+    </head>
+
+    <body>
+        <div class="main">
+            <div class="top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <a href="#" class="top-link">MISProjectGroup </a> /
+                            <a href="#" class="top-link">Documentation</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 offset-4">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <nav class="navbar navbar-expand-md navbar-dark topNavigation">
+                <i class="fa fa-fire pr-2" aria-hidden="true" style="font-size: 40px; color: rgba(47, 150, 33, 0.76);"></i>
+                <a class="navbar-brand" href="#"> CSC 201 Portal</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="../index2.html"><i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="registration.html"><i class="fa fa-edit"></i> Register Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active top-navlink" href="#"><i class="fa fa-check"></i> Student Verification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="database.html"><i class="fa fa-database"></i> Database</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="contact.html"><i class="fa fa-group"></i> Contact Developers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="#sign-out" data-toggle="modal" data-target="#sign-out"><i class="fa fa-sign-out"></i></a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+            </nav>
+            <div class="modal fade" id="sign-out" tabindex="-1" role="dialog" aria-labelledby="signoutModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title"> Confirm Sign-Out </h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close" aria-hidden="true">
+                                &times;
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to sign-out?</p>
+                            <p class="text-warning"><small> Unfinished transactions will not be recorded</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-success">Sign-Out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <section id="reg">
+            <div class="container-fluid">
+                
+                <div class="row">
+                    <div class="col-sm-6 offset-3 regBox text-center animated fadeIn delay-1s" id="parent">
+
+                        <form id="registrationForm">
+                            <fieldset class="form-group fieldset">
+                                <legend class="w-auto text-left">Enter Manual Number</legend>
+                                <div class="control-group">
+                                    <input type="text" class="form-control" placeholder="Student's Manual Number">
+                                    
+                                    <button type="button" class="btn btn-success pull-right" data-toggle="modal" data-target="#confirm">Confirm Registration</button>
+                                </div>
+                                
+                            </fieldset>
+                            <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-labelledby="signoutModal" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content receipt">
+                                        <div class="modal-header">
+                                            <h6 class="modal-title"> Registration Successful! </h6>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="close" aria-hidden="true">
+                                                &times;
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row receipt-top">
+                                                <div class="col">
+                                                    <img src="../img/logo.png" height="30px" width="30px"><h5>Federal University of Technology Owerri</h5>
+                                                    <h6>Department of Computer Science</h6>
+                                                    <h6 class="receipt-text2">Official CSC 201 Manual Reciept</h6>
+                                                </div>
+                                            </div>
+                                            <div class="container-fluid boxin">
+                                            <div class="row receipt-middle">
+                                                <div class="col-4 text-left">
+                                                    <img src="../img/user.png">
+                                                </div>
+                                                <div class="col-8 pull-right">
+                                                    <div class="text-right">
+                                                        <h6>Chukwuka Chimdindu Emmanuel</h6>
+                                                        <h6>20151013333</h6>
+                                                        <h6>Computer Science</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <h5 class="text-secondary" id="receipt-text">Payment Details</h5>
+                                            <div class="row receipt-section">
+                                                <div class="col-6 text-left">
+                                                    <h6>Amount Paid</h6>
+                                                    <h6>Applicable fees</h6>
+                                                    <h6>Payment Method</h6>
+                                                    <h6>Transaction Ref</h6>
+                                                </div>
+                                                <div class=" col-6 text-right">
+                                                    <h6>NGN 1,500.00</h6>
+                                                    <h6>NGN 0.00</h6>
+                                                    <h6>Cash</h6>
+                                                    <h6>2356AC</h6>
+                                                </div>
+                                            </div>
+                                            <h6 class="text-secondary receipt-text2">MON APR 27 2020</h6>
+                                            <div class="row">
+                                                <div class="col-6 text-left">
+                                                    <h6>Sales Representative</h6>
+                                                    <h6>Manual Number</h6>
+                                                </div>
+                                                <div class=" col-6 text-right">
+                                                    <h6>Mr. Diala</h6>
+                                                    <h6>2356AC</h6>
+                                                </div>
+                                            </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary pull-left" data-dismiss="modal">Cancel</button>
+                                            <button type="button" class="btn btn-warning" data-dismiss="modal">Print</button>
+                                            <button type="button" class="btn btn-primary"><i fa fa-envelope></i>Email Receipt</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                        </form>
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+   
+        <footer id="footer">
+            <div id="top-footer" class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">MISProjectGroup</h5>
+                        <p>This website is designed and managed by MISProjectGroup
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">Portal</h5>
+                        <div class="footer-list text-left">
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Register Students</a>
+                            </div>
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Student Verification</a>
+                            </div>
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Database</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">Others</h5>
+                        <div class="footer-list">
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Sales Report</a>
+                            </div>  
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Contact Developers</a>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">Connect</h5>
+                        
+                            <div class="footer-list d-flex">
+                                <a class="footer-link" href="#"><li><i class="fa fa-phone-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-linkedin-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-twitter-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-github-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-facebook-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-envelope-square fa-2x pr-2"></i></li></a>
+                                
+                            </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            <div id="bottom-footer" class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 offset-6 text-right">
+                        <h6 class="small text-secondary py-3">Copyright <i class="fa fa-copyright" style="color: rgba(47, 150, 33, 0.76)"></i> - All Rights Reserved - <i class="fa fa-graduation-cap" style="color: rgba(47, 150, 33, 0.76)"></i> CSC 201 Portal</h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </body>
+    <script src="../js/loader.js"></script>   
+</html>

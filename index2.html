@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>CSC 201 Portal</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="css/bootstrap.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
+        <link href="css/animate.css" rel="stylesheet">
+        <script src="jquery/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="dist/Chart.js"></script>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="top">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <a href="#" class="top-link">MISProjectGroup </a> /
+                            <a href="#" class="top-link">Documentation</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4 offset-4">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <nav class="navbar navbar-expand-md navbar-dark topNavigation">
+                <i class="fa fa-fire pr-2" aria-hidden="true" style="font-size: 40px; color: rgba(47, 150, 33, 0.76);"></i>
+                <a class="navbar-brand" href="#"> CSC 201 Portal</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active top-navlink" href="index2.html"><i class="fa fa-home"></i> Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="Pages/registration.html"><i class="fa fa-edit"></i> Register Students</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="Pages/verification.html"><i class="fa fa-check"></i> Student Verification</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="Pages/database.html"><i class="fa fa-database"></i> Database</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="Pages/contact.html"><i class="fa fa-group"></i> Contact Developers</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link top-navlink" href="#sign-out" data-toggle="modal" data-target="#sign-out"><i class="fa fa-sign-out"></i></a>
+                        </li>
+                    </ul>
+                    
+                </div>
+                
+            </nav>
+            <div class="modal fade" id="sign-out" tabindex="-1" role="dialog" aria-labelledby="signoutModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h6 class="modal-title"> Confirm Sign-Out </h6>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="close" aria-hidden="true">
+                                &times;
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Are you sure you want to sign-out?</p>
+                            <p class="text-warning"><small> unfinished transaction will not be recorded</small></p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-primary">Sign-Out</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+        <section id="intro">
+            <div class="intro-box">
+                <div class="introContent text-center">
+                    <h1 class="animated fadeInDown delay-1s">Welcome Mr. Diala!</h1>
+                    <h3 class="text-secondary animated fadeInUp delay-1s">Click the button below to get started</h3>
+                    <a class="btn btn-outline-success btn-lg scroll-to" href="#content">Get Started</a>
+                </div>
+            </div>
+        </section> 
+        </header>  
+        <section id="content">
+            <div class="container">
+                <div class="row row-eq-height">
+                    <div class="col-md-3 col-sm-6">
+                        <div class="box text-center">
+                            <div class="bg">
+                                <div class="badge-box">
+                                    <span class="badge badge-success badge-circled px-2">1</span>
+                                </div>
+                                <i class="fa fa-stack-overflow fa-5x"> </i>
+                                <h5 class="box-text">Register Students</h5>
+                                <a class="btn btn-success" href="Pages/registration.html">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <div class="box text-center">
+                            <div class="bg">
+                                <div class="badge-box">
+                                    <span class="badge badge-info badge-circled px-2">2</span>
+                                </div>
+                                <i class="fa fa-user-md fa-5x"> </i>
+                                <h5 class="box-text">Verification</h5>
+                                <a class="btn btn-success" href="Pages/verification.html">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="box text-center">
+                            <div class="bg">
+                                <div class="badge-box">
+                                <span class="badge badge-warning badge-circled px-2">3</span>
+                                </div>
+                                <i class="fa fa-dropbox fa-5x"> </i>
+                                <h5 class="box-text">Open Database</h5>
+                                <a class="btn btn-success" href="Pages/database.html">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 text-center">
+                        <div class="box text-center">
+                            <div class="bg">
+                                <div class="badge-box">
+                                    <span class="badge badge-danger badge-circled px-2">4</span>
+                                </div>
+                                <i class="fa fa-line-chart fa-5x"> </i>
+                                <h5 class="box-text">Sales Report</h5>
+                                <a class="btn btn-success" href="#sales">Get Started</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="sales">
+            <div class="sales-heading">
+                <div class="container">
+                    <h3 class="salesHeader text-center">Sales Overview</h3>
+                </div>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-3 col-md-6">
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-cart-plus fa-3x" style="color: rgb(255, 113, 9)" ></i>
+                                        <div class="text-right">
+                                            <h6>Today Sales</h6>
+                                            <h5>$3,500</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    <span>Updated</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-bar-chart-o fa-3x" style="color: rgb(30, 207, 7);"></i>
+                                        <div class="text-right">
+                                            <h6>Total sales</h6>
+                                            <h5>$367,500</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    <span>Updated</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-book fa-3x" style="color: rgb(18, 192, 245)"></i>
+                                        <div class="text-right">
+                                            <h6>Total Purchased</h6>
+                                            <h5>352</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    <span>Updated</span>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-lg-3 col-md-6">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="d-flex justify-content-between">
+                                        <i class="fa fa-street-view fa-3x" style="color: rgb(243, 51, 51);"></i>
+                                        <div class="text-right">
+                                            <h6>Verified Students</h6>
+                                            <h5>97</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fa fa-refresh fa-spin"></i>
+                                    <span>Updated</span>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid" id="navTab-row" >
+                <div class="row navTab-mainrow">
+                    <div class="col-md-7 mt-1">
+                        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                            <li class="nav-item active" >
+                                <a href="#seet" class="nav-link active" id="seet-tab" data-toggle="tab" aria-controls="seet" aria-selected="true"><h6>SEET</h6></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#smat" class="nav-link" id="smat-tab" data-toggle="tab" aria-controls="smat" aria-selected="false"><h6>SMAT</h6></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#saat" class="nav-link" id="saat-tab" data-toggle="tab" aria-controls="saat" aria-selected="false"><h6>SAAT</h6></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#sobs" class="nav-link" id="sobs-tab" data-toggle="tab" aria-controls="sobs" aria-selected="false"><h6>SOBS</h6></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#soes" class="nav-link" id="soes-tab" data-toggle="tab" aria-controls="soes" aria-selected="false"><h6>SOES</h6></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#soht" class="nav-link" id="soht-tab" data-toggle="tab" aria-controls="soht" aria-selected="false"><h6>SOHT</h6></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#sops" class="nav-link" id="sops-tab" data-toggle="tab" aria-controls="sops" aria-selected="false"><h6>SOPS</h6></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#scit" class="nav-link" id="scit-tab" data-toggle="tab" aria-controls="scit" aria-selected="false"><h6>SCIT</h6></a>
+                            </li>
+                        </ul>
+                
+                        <div class="tab-content">
+                            <div class="tab-pane fade show active" id="seet" role="tabpanel" aria-labelledby="seet-tab">
+                                <canvas id="seetChart"></canvas>
+                            </div>
+                            <div class="tab-pane fade" id="smat" role="tabpanel" aria-labelledby="smat-tab">
+                                <canvas id="smatChart"></canvas>
+                            </div>
+                            <div class="tab-pane fade" id="saat" role="tabpanel" aria-labelledby="saat-tab">
+                                <canvas id="saatChart"></canvas>
+                            </div>
+                            <div class="tab-pane fade" id="sobs" role="tabpanel" aria-labelledby="sobs-tab">
+                                <canvas id="sobsChart"></canvas>
+                            
+                            </div>
+                            <div class="tab-pane fade" id="soes" role="tabpanel" aria-labelledby="soes-tab">
+                                <canvas id="soesChart"></canvas>
+                            
+                            </div>
+                            <div class="tab-pane fade" id="soht" role="tabpanel" aria-labelledby="soht-tab">
+                                <canvas id="sohtChart"></canvas>
+                            
+                            </div>
+                            <div class="tab-pane fade" id="sops" role="tabpanel" aria-labelledby="sops-tab">
+                                <canvas id="sopsChart"></canvas>
+                            </div>
+                            <div class="tab-pane fade" id="scit" role="tabpanel" aria-labelledby="scit-tab">
+                                <canvas id="scitChart"></canvas>
+                            
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-5 mt-1">
+
+                        <div id="carouselData" class="carousel slide" data-ride="carousel">
+                            <ol class="carousel-indicators" style="color: black;">
+                                <li data-target="#carouselData" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselData" data-slide-to="1"></li>
+                                <li data-target="#carouselData" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <canvas id="chart1" class="d-block" alt="First Slide">
+
+                                    </canvas>
+                                </div>
+                                <div class="carousel-item">
+                                    <canvas id="chart2" class="d-block w-100" alt="Second Slide">
+
+                                    </canvas>
+                                </div>
+                                <div class="carousel-item">
+                                    <div id="recent" class="d-block w-100" alt="third slide">
+                                        <h6 class="text-center" style="color: rgb(255, 255, 255); border-bottom: 1px solid rgba(47, 150, 33, 0.76);">Recent Sales</h6>
+                                        <div class="table-responsive-md" style="height: 22rem;overflow-y: auto;">
+                                        <table class="table table-sm table-hover table-borderless">
+                                            <thead class="thead-light br-1">
+                                                <tr>
+                                                    <th scope="col">M_ID</th>
+                                                    <th scope="col">Full Name</th>
+                                                    <th scope="col">Department</th>
+                                                    <th scope="col">Purchase Date</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="row">435678AD</th>
+                                                    <td>Tobechi Anthony</td>
+                                                    <td>Dental Health Technology</td>
+                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselData" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselData" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </a>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="total-summary">
+            <div class="container-fluid">
+                <div class="row">
+
+                    <div class="col-sm-12">
+
+                        <canvas id="allchartsss">
+                            
+                        </canvas>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <footer id="footer" style="background-image: url(img/fa.jpg);">
+            <div id="top-footer" class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">MISProjectGroup</h5>
+                        <p>This website is designed and managed by MISProjectGroup
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">Portal</h5>
+                        <div class="footer-list text-left">
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Register Students</a>
+                            </div>
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Student Verification</a>
+                            </div>
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Database</a>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">Others</h5>
+                        <div class="footer-list">
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Sales Report</a>
+                            </div>  
+                            <div class="footer-item">
+                                <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Contact Developers</a>
+                            </div> 
+                        </div> 
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5 class="footer-text">Connect</h5>
+                        
+                            <div class="footer-list d-flex">
+                                <a class="footer-link" href="#"><li><i class="fa fa-phone-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-linkedin-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-twitter-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-github-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-facebook-square fa-2x pr-2"></i></li></a>
+                                <a class="footer-link" href="#"><li><i class="fa fa-envelope-square fa-2x pr-2"></i></li></a>
+                                
+                            </div>
+                        
+                        
+                    </div>
+                
+                </div>
+            </div>
+            <div id="bottom-footer" class="container-fluid">
+                <div class="row">
+                    <div class="col-sm-6 offset-6 text-right">
+                        <h6 class="small text-secondary py-3">Copyright <i class="fa fa-copyright" style="color: rgba(47, 150, 33, 0.76)"></i> - All Rights Reserved - <i class="fa fa-graduation-cap" style="color: rgba(47, 150, 33, 0.76)"></i> CSC 201 Portal</h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+   
+    <script src="js/cha2.js"></script>
+    <script src="dist/Chart.js"></script>
+    <script src="js/scripts.js"></script>
+    
+</html>
