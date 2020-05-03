@@ -1,20 +1,55 @@
+<?php
+require('scripts/session_auth.php');
+?>
 <!DOCTYPE html>
 <html>
 
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CSC 201 Portal</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <link href="css/font-awesome.css" rel="stylesheet">
-        <link href="css/bootstrap.css" rel="stylesheet">
-        <link href="css/styles.css" rel="stylesheet">
-        <link href="css/animate.css" rel="stylesheet">
-        <script src="jquery/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="dist/Chart.js"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSC 201 Portal</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <script src="jquery/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="dist/Chart.js"></script>
+</head>
+<?php
+if (!$name) header("Refresh: 5; URL=index.html");
+
+if (empty($name)) {
+?>
+    <style>
+        .center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    </style>
+
+
+    <div class="container mt-5">
+        <div class="col-md-6 alert alert-warning center" role="alert">
+            <i class="fa fa-exclamation-triangle"></i>
+            You need to login before accessing this page! Redirecting...
+        </div>
+    </div>
+
+    <script>
+        setInterval(function() {
+
+            window.location.href = "index.html";
+
+        }, 5000);
+    </script>
+<?php
+} else {
+
+?>
 
     <body>
         <header class="header">
@@ -28,12 +63,12 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-4 offset-4">
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
-        
+
             <nav class="navbar navbar-expand-md navbar-dark topNavigation">
                 <i class="fa fa-fire pr-2" aria-hidden="true" style="font-size: 40px; color: rgba(47, 150, 33, 0.76);"></i>
                 <a class="navbar-brand" href="#"> CSC 201 Portal</a>
@@ -58,12 +93,12 @@
                             <a class="nav-link top-navlink" href="Pages/contact.html"><i class="fa fa-group"></i> Contact Developers</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link top-navlink" href="#sign-out" data-toggle="modal" data-target="#sign-out"><i class="fa fa-sign-out"></i></a>
+                            <a class="nav-link top-navlink" data-toggle="modal" data-target="#sign-out"><i class="fa fa-sign-out"></i></a>
                         </li>
                     </ul>
-                    
+
                 </div>
-                
+
             </nav>
             <div class="modal fade" id="sign-out" tabindex="-1" role="dialog" aria-labelledby="signoutModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -80,22 +115,22 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                            <button type="button" class="btn btn-primary">Sign-Out</button>
+                            <button type="button" class="btn btn-primary" onclick="location.href='api/sign_out.php'">Sign Out</button>
                         </div>
                     </div>
                 </div>
             </div>
-        
-        <section id="intro">
-            <div class="intro-box">
-                <div class="introContent text-center">
-                    <h1 class="animated fadeInDown delay-1s">Welcome Mr. Diala!</h1>
-                    <h3 class="text-secondary animated fadeInUp delay-1s">Click the button below to get started</h3>
-                    <a class="btn btn-outline-success btn-lg scroll-to" href="#content">Get Started</a>
+
+            <section id="intro">
+                <div class="intro-box">
+                    <div class="introContent text-center">
+                        <h1 class="animated fadeInDown delay-1s">Welcome Mr. Diala!</h1>
+                        <h3 class="text-secondary animated fadeInUp delay-1s">Click the button below to get started</h3>
+                        <a class="btn btn-outline-success btn-lg scroll-to" href="#content">Get Started</a>
+                    </div>
                 </div>
-            </div>
-        </section> 
-        </header>  
+            </section>
+        </header>
         <section id="content">
             <div class="container">
                 <div class="row row-eq-height">
@@ -127,7 +162,7 @@
                         <div class="box text-center">
                             <div class="bg">
                                 <div class="badge-box">
-                                <span class="badge badge-warning badge-circled px-2">3</span>
+                                    <span class="badge badge-warning badge-circled px-2">3</span>
                                 </div>
                                 <i class="fa fa-dropbox fa-5x"> </i>
                                 <h5 class="box-text">Open Database</h5>
@@ -162,7 +197,7 @@
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
-                                        <i class="fa fa-cart-plus fa-3x" style="color: rgb(255, 113, 9)" ></i>
+                                        <i class="fa fa-cart-plus fa-3x" style="color: rgb(255, 113, 9)"></i>
                                         <div class="text-right">
                                             <h6>Today Sales</h6>
                                             <h5>$3,500</h5>
@@ -177,7 +212,7 @@
 
                         </div>
                         <div class="col-lg-3 col-md-6">
-                            
+
                             <div class="card">
                                 <div class="card-body">
                                     <div class="d-flex justify-content-between">
@@ -229,42 +264,58 @@
                                     <span>Updated</span>
                                 </div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="container-fluid" id="navTab-row" >
+            <div class="container-fluid" id="navTab-row">
                 <div class="row navTab-mainrow">
                     <div class="col-md-7 mt-1">
                         <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
-                            <li class="nav-item active" >
-                                <a href="#seet" class="nav-link active" id="seet-tab" data-toggle="tab" aria-controls="seet" aria-selected="true"><h6>SEET</h6></a>
+                            <li class="nav-item active">
+                                <a href="#seet" class="nav-link active" id="seet-tab" data-toggle="tab" aria-controls="seet" aria-selected="true">
+                                    <h6>SEET</h6>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#smat" class="nav-link" id="smat-tab" data-toggle="tab" aria-controls="smat" aria-selected="false"><h6>SMAT</h6></a>
+                                <a href="#smat" class="nav-link" id="smat-tab" data-toggle="tab" aria-controls="smat" aria-selected="false">
+                                    <h6>SMAT</h6>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#saat" class="nav-link" id="saat-tab" data-toggle="tab" aria-controls="saat" aria-selected="false"><h6>SAAT</h6></a>
+                                <a href="#saat" class="nav-link" id="saat-tab" data-toggle="tab" aria-controls="saat" aria-selected="false">
+                                    <h6>SAAT</h6>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#sobs" class="nav-link" id="sobs-tab" data-toggle="tab" aria-controls="sobs" aria-selected="false"><h6>SOBS</h6></a>
+                                <a href="#sobs" class="nav-link" id="sobs-tab" data-toggle="tab" aria-controls="sobs" aria-selected="false">
+                                    <h6>SOBS</h6>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#soes" class="nav-link" id="soes-tab" data-toggle="tab" aria-controls="soes" aria-selected="false"><h6>SOES</h6></a>
+                                <a href="#soes" class="nav-link" id="soes-tab" data-toggle="tab" aria-controls="soes" aria-selected="false">
+                                    <h6>SOES</h6>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#soht" class="nav-link" id="soht-tab" data-toggle="tab" aria-controls="soht" aria-selected="false"><h6>SOHT</h6></a>
+                                <a href="#soht" class="nav-link" id="soht-tab" data-toggle="tab" aria-controls="soht" aria-selected="false">
+                                    <h6>SOHT</h6>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#sops" class="nav-link" id="sops-tab" data-toggle="tab" aria-controls="sops" aria-selected="false"><h6>SOPS</h6></a>
+                                <a href="#sops" class="nav-link" id="sops-tab" data-toggle="tab" aria-controls="sops" aria-selected="false">
+                                    <h6>SOPS</h6>
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#scit" class="nav-link" id="scit-tab" data-toggle="tab" aria-controls="scit" aria-selected="false"><h6>SCIT</h6></a>
+                                <a href="#scit" class="nav-link" id="scit-tab" data-toggle="tab" aria-controls="scit" aria-selected="false">
+                                    <h6>SCIT</h6>
+                                </a>
                             </li>
                         </ul>
-                
+
                         <div class="tab-content">
                             <div class="tab-pane fade show active" id="seet" role="tabpanel" aria-labelledby="seet-tab">
                                 <canvas id="seetChart"></canvas>
@@ -277,22 +328,22 @@
                             </div>
                             <div class="tab-pane fade" id="sobs" role="tabpanel" aria-labelledby="sobs-tab">
                                 <canvas id="sobsChart"></canvas>
-                            
+
                             </div>
                             <div class="tab-pane fade" id="soes" role="tabpanel" aria-labelledby="soes-tab">
                                 <canvas id="soesChart"></canvas>
-                            
+
                             </div>
                             <div class="tab-pane fade" id="soht" role="tabpanel" aria-labelledby="soht-tab">
                                 <canvas id="sohtChart"></canvas>
-                            
+
                             </div>
                             <div class="tab-pane fade" id="sops" role="tabpanel" aria-labelledby="sops-tab">
                                 <canvas id="sopsChart"></canvas>
                             </div>
                             <div class="tab-pane fade" id="scit" role="tabpanel" aria-labelledby="scit-tab">
                                 <canvas id="scitChart"></canvas>
-                            
+
                             </div>
                         </div>
                     </div>
@@ -319,92 +370,92 @@
                                     <div id="recent" class="d-block w-100" alt="third slide">
                                         <h6 class="text-center" style="color: rgb(255, 255, 255); border-bottom: 1px solid rgba(47, 150, 33, 0.76);">Recent Sales</h6>
                                         <div class="table-responsive-md" style="height: 22rem;overflow-y: auto;">
-                                        <table class="table table-sm table-hover table-borderless">
-                                            <thead class="thead-light br-1">
-                                                <tr>
-                                                    <th scope="col">M_ID</th>
-                                                    <th scope="col">Full Name</th>
-                                                    <th scope="col">Department</th>
-                                                    <th scope="col">Purchase Date</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">435678AD</th>
-                                                    <td>Tobechi Anthony</td>
-                                                    <td>Dental Health Technology</td>
-                                                    <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                            <table class="table table-sm table-hover table-borderless">
+                                                <thead class="thead-light br-1">
+                                                    <tr>
+                                                        <th scope="col">M_ID</th>
+                                                        <th scope="col">Full Name</th>
+                                                        <th scope="col">Department</th>
+                                                        <th scope="col">Purchase Date</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-check-circle text-success pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">435678AD</th>
+                                                        <td>Tobechi Anthony</td>
+                                                        <td>Dental Health Technology</td>
+                                                        <td>15/8/2020<i class="fa fa-exclamation-circle text-warning pl-1" aria-hidden="true"></i></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
                                         </div>
-                                        
+
                                     </div>
                                 </div>
                             </div>
@@ -415,7 +466,7 @@
                                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             </a>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -427,15 +478,15 @@
                     <div class="col-sm-12">
 
                         <canvas id="allchartsss">
-                            
+
                         </canvas>
-                        
+
                     </div>
                 </div>
             </div>
         </section>
-        
-        
+
+
         <footer id="footer" style="background-image: url(img/fa.jpg);">
             <div id="top-footer" class="container-fluid">
                 <div class="row">
@@ -456,7 +507,7 @@
                             <div class="footer-item">
                                 <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Database</a>
                             </div>
-                            
+
                         </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
@@ -464,28 +515,40 @@
                         <div class="footer-list">
                             <div class="footer-item">
                                 <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Sales Report</a>
-                            </div>  
+                            </div>
                             <div class="footer-item">
                                 <i class="fa fa-angle-right" aria-hidden="true" style="color: rgba(47, 150, 33, 0.76);"></i><a class="footer-link" href="#"> Contact Developers</a>
-                            </div> 
-                        </div> 
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-3 col-sm-6">
                         <h5 class="footer-text">Connect</h5>
-                        
-                            <div class="footer-list d-flex">
-                                <a class="footer-link" href="#"><li><i class="fa fa-phone-square fa-2x pr-2"></i></li></a>
-                                <a class="footer-link" href="#"><li><i class="fa fa-linkedin-square fa-2x pr-2"></i></li></a>
-                                <a class="footer-link" href="#"><li><i class="fa fa-twitter-square fa-2x pr-2"></i></li></a>
-                                <a class="footer-link" href="#"><li><i class="fa fa-github-square fa-2x pr-2"></i></li></a>
-                                <a class="footer-link" href="#"><li><i class="fa fa-facebook-square fa-2x pr-2"></i></li></a>
-                                <a class="footer-link" href="#"><li><i class="fa fa-envelope-square fa-2x pr-2"></i></li></a>
-                                
-                            </div>
-                        
-                        
+
+                        <div class="footer-list d-flex">
+                            <a class="footer-link" href="#">
+                                <li><i class="fa fa-phone-square fa-2x pr-2"></i></li>
+                            </a>
+                            <a class="footer-link" href="#">
+                                <li><i class="fa fa-linkedin-square fa-2x pr-2"></i></li>
+                            </a>
+                            <a class="footer-link" href="#">
+                                <li><i class="fa fa-twitter-square fa-2x pr-2"></i></li>
+                            </a>
+                            <a class="footer-link" href="#">
+                                <li><i class="fa fa-github-square fa-2x pr-2"></i></li>
+                            </a>
+                            <a class="footer-link" href="#">
+                                <li><i class="fa fa-facebook-square fa-2x pr-2"></i></li>
+                            </a>
+                            <a class="footer-link" href="#">
+                                <li><i class="fa fa-envelope-square fa-2x pr-2"></i></li>
+                            </a>
+
+                        </div>
+
+
                     </div>
-                
+
                 </div>
             </div>
             <div id="bottom-footer" class="container-fluid">
@@ -497,9 +560,10 @@
             </div>
         </footer>
     </body>
-   
+
     <script src="js/cha2.js"></script>
     <script src="dist/Chart.js"></script>
     <script src="js/scripts.js"></script>
-    
+
 </html>
+<?php } ?>

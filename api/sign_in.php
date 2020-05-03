@@ -38,9 +38,12 @@ if ($result->num_rows > 0) {
         $_SESSION['id'] = $id;
         $_SESSION['name'] = $fname;
 
+        //after successful login
+        header('Location: ../index2.php');
+
         // if login is successful, send response to frontend as JSON format
-        $msg = 'Login Successful.';
-        echo json_encode(['code' => 200, 'msg' => $msg]);
+        // $msg = 'Login Successful.';
+        // echo json_encode(['code' => 200, 'msg' => $msg]);
     } else {
         // error
         $err = 'Invalid user details.';

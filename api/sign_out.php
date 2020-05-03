@@ -6,4 +6,4 @@ $_SESSION = array();
 session_destroy();
 
 // redirect to the login page using php built-in header method
-header("Location: /");
+header("Location: ../index.html");
